@@ -2,12 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { PrismaClient } from '@prisma/client';
-import { v4 as uuidv4 } from 'uuid';
 
-const prisma = new PrismaClient();
-
-export default function CreateInstitution() {
+export default function CreateInstitutionPage() {
   const router = useRouter();
   const [name, setName] = useState('');
   const [subdomain, setSubdomain] = useState('');
@@ -41,7 +37,6 @@ export default function CreateInstitution() {
   return (
     <div className="max-w-xl mx-auto mt-16 p-6 bg-white shadow-md rounded-md">
       <h1 className="text-2xl font-bold mb-6">Create New School</h1>
-
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block mb-1 font-medium">School Name</label>
@@ -53,7 +48,6 @@ export default function CreateInstitution() {
             className="w-full border rounded p-2"
           />
         </div>
-
         <div>
           <label className="block mb-1 font-medium">Subdomain</label>
           <input
@@ -65,7 +59,6 @@ export default function CreateInstitution() {
             placeholder="example.kogbodi.school"
           />
         </div>
-
         <div>
           <label className="block mb-1 font-medium">Logo URL</label>
           <input
@@ -76,7 +69,6 @@ export default function CreateInstitution() {
             placeholder="Optional"
           />
         </div>
-
         <div>
           <label className="block mb-1 font-medium">Primary Color</label>
           <input
@@ -86,9 +78,7 @@ export default function CreateInstitution() {
             className="w-16 h-10 p-0 border-none"
           />
         </div>
-
         {error && <p className="text-red-600">{error}</p>}
-
         <button
           type="submit"
           disabled={loading}
@@ -99,4 +89,4 @@ export default function CreateInstitution() {
       </form>
     </div>
   );
-    }
+        }
