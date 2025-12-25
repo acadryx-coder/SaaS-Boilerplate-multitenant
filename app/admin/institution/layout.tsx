@@ -1,5 +1,4 @@
-'use client';
-
+// Remove 'use client' directive
 import React from 'react';
 
 export const metadata = {
@@ -16,4 +15,4 @@ export default function InstitutionLayout({ children }: { children: React.ReactN
       <main className="p-6">{children}</main>
     </div>
   );
-      }
+}
